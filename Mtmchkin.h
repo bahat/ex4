@@ -1,8 +1,16 @@
 #ifndef MTMCHKIN_H_
 #define MTMCHKIN_H_
+#include "utilities.h"
+#include "Cards/Card.h"
+#include "Players/Player.h"
+#include "Cards/BattleCard.h"
 
 class Mtmchkin{
 
+    std::deque<std::shared_ptr<Card>> cards;
+    std::deque<> players;
+    std::deque<Player*> leaderBoard_Winners;
+    std::deque<Player*> leaderBoard_Losers;
 public:
     
     /*

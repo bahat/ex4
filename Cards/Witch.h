@@ -4,11 +4,15 @@
 
 #ifndef EX4_WITCH_H
 #define EX4_WITCH_H
-#include "BattleCard.h"
+#include "Card.h"
 
-class Witch {
+class Witch:public BattleCard {
+const std::string WITCH_NAME = "Witch";
+const int WITCH_FORCE = 11;
+const int WITCH_DAMAGE = 10;
+const int WITCH_LOOT = 2;
+public:
+    Witch();
 
 };
-
-
 #endif //EX4_WITCH_H

@@ -6,13 +6,12 @@
 #define EX4_WELLCARD_H
 #include "Card.h"
 
-class WellCard : public Card{
-
+class WellCard: public Card{
+    const std::string CARD_NAME = "Well";
+    const std::string NINJA_TYPE = "Ninja";
 public:
-    void playCard(Mtmchkin& game) const override
-    {
-        game->currentPlayer->
-    }
+    void playCard(Player &player) const override;
+    explicit WellCard();
 };
 
 

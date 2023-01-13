@@ -6,7 +6,15 @@
 #define EX4_BARFIGHTCARD_H
 #include "Card.h"
 
-class BarfightCard {
+class BarfightCard: public Card {
+
+    const std::string WARRIOR_TYPE = "Warrior";
+    const std::string CARD_NAME = "Barfight";
+
+public:
+    explicit BarfightCard();
+
+    void playCard(Player &player) const override;
 
 };
 

@@ -4,10 +4,15 @@
 
 #ifndef EX4_DRAGON_H
 #define EX4_DRAGON_H
-#include "BattleCard.h"
+#include "Card.h"
 
-class Dragon {
-
+class Dragon : public BattleCard{
+    const std::string DRAGON_NAME = "Dragon";
+    const int DRAGON_FORCE = 25;
+    const int DRAGON_DAMAGE = -1;
+    const int DRAGON_LOOT = 1000;
+public:
+    Dragon();
 };
 
 

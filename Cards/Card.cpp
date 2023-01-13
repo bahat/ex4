@@ -3,3 +3,10 @@
 //
 
 #include "Card.h"
+
+std::ostream &Card::operator<<(std::ostream &os) {
+    printCardDetails(os, m_cardName);
+    printEndOfCardDetails(os);
+    return os;
+}
+

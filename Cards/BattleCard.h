@@ -6,8 +6,21 @@
 #define EX4_BATTLECARD_H
 #include "Card.h"
 
-class BattleCard {
+class BattleCard: public Card {
+protected:
+    const int m_force;
+    const int m_damage;
+    const int m_loot;
+    BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot) : Card(name), m_force(mForce), m_damage(mDamage), m_loot(mLoot)
+    {}
 
+public:
+    void playCard(Player &player) const override;
+    virtual std::ostream& operator<<(std::ostream& os);
+    int getForce() const;
+    int getDamage() const;
+    int getLoot() const;
+    std::string getType() const;
 };
 
 

@@ -6,8 +6,12 @@
 #define EX4_MANACARD_H
 #include "Card.h"
 
-class ManaCard {
-
+class ManaCard : public Card {
+    const std::string CARD_NAME = "Mana";
+    const std::string HEALER_TYPE = "Healer";
+public:
+    void playCard(Player &player) const override;
+    explicit ManaCard();
 };
 
 

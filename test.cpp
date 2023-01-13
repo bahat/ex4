@@ -124,7 +124,7 @@ bool cardsPrintsTest()
     Barfight junta;
     Dragon mushu;
     Mana mana;
-    Gremlin gremlin;
+    Gremlin gremlin(<#initializer#>, 0, 0, 0);
     Merchant pizzaHut;
     Well well;
     Treasure factor;
@@ -150,7 +150,7 @@ bool playersPrintsTest()
 bool testCard()
 {
     vector<unique_ptr<Card>> cards;
-    cards.push_back(unique_ptr<Card>(new Gremlin()));
+    cards.push_back(unique_ptr<Card>(new Gremlin(<#initializer#>, 0, 0, 0)));
     cards.push_back(unique_ptr<Card>(new Witch()));
     cards.push_back(unique_ptr<Card>(new Dragon()));
     cards.push_back(unique_ptr<Card>(new Treasure()));

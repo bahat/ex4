@@ -3,3 +3,10 @@
 //
 
 #include "Well.h"
+
+void WellCard::playCard(Player &player) const {
+    player.useWellCard();
+    printWellMessage(player.getType()==NINJA_TYPE);
+}
+
+WellCard::WellCard() : Card(CARD_NAME) {}

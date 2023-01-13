@@ -3,3 +3,5 @@
 //
 
 #include "Dragon.h"
+
+Dragon::Dragon() : BattleCard(DRAGON_NAME, DRAGON_FORCE, DRAGON_DAMAGE, DRAGON_LOOT){}
