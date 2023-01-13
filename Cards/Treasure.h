@@ -11,7 +11,6 @@ class TreasureCard : public Card {
      const std::string TREASURE_NAME = "Treasure";
 
 public:
-    void printCard() const override;
     void playCard(Player &currentPlayer) const override;
 };
 

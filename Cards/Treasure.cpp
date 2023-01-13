@@ -4,12 +4,8 @@
 
 #include "Treasure.h"
 
-void TreasureCard::printCard() const {
-    printCardDetails(std::cout, TREASURE_NAME);
-    printTreasureMessage();
-    printEndOfCardDetails(std::cout);
-}
 
 void TreasureCard::playCard(Player &currentPlayer) const {
-    currentPlayer.
+    currentPlayer.addCoins(TREASURE_DEFAULT_VALUE);
+    printTreasureMessage();
 }
