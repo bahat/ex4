@@ -1,0 +1,49 @@
+Shit to do :))))
+
+-Mtmchkin:
+    -c'tor--> reading deck.txt and creating a queue of cards
+        -make sure to use exceptions and override what() functions
+    -initializing Players from input and creating a queue from them
+        -interactively
+        -2<=numOfPlayers<=6 if doesnt hold->printInvalidTeamSize
+        -invalid names/class -> printInvalidName/Class
+    -no copy/assignment for Mtmchkin class
+    -Leaderboard:
+         -decide on way of implementation
+             -2 queues
+                 -winners queue: push each time level is 10
+                 -losers queue: push each time hp is 0
+                 -each push counter++, when counter==numOfPlayers end game
+                 -merge at end
+             -array of size numOfPlayers
+                 -keep 2 indexes:
+                     -largestNonWinner
+                     -smallestNonLoser
+                 -each time a player wins/loses:
+                     -if(largestNonWinner>=smallestNonLoser)
+                         -push loser/winner to correct index and increment in opposite directions accordingly
+                     -else
+                         -push loser/winner to index and finish game :)
+         -either way, when printLeaderboard is called, the players still in the game need to be ordered by playing order
+     -isGameOver
+     -getNumberOfRounds
+        -obvious
+     -playRound()
+        -printRoundStartMessage
+        -card is drawn
+        -player plays card
+        -card pushed back to queue
+        -if game is over -->printGameEndMessage
+
+-Player:
+    -c'tors
+    -d'tors
+    -copy/assignment?? (check if even required)
+    -in general, go over class and remove dumb shit
+
+-Cards:
+    -
+
+
+-Exceptions:
+    -after finishing all of the above, go over and try to troubleshoot any cases of exceptions

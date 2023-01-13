@@ -7,10 +7,7 @@
 
 class Mtmchkin{
 
-    std::deque<std::shared_ptr<Card>> cards;
-    std::deque<> players;
-    std::deque<Player*> leaderBoard_Winners;
-    std::deque<Player*> leaderBoard_Losers;
+
 public:
     
     /*
