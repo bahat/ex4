@@ -133,7 +133,7 @@ std::ostream &Player::operator<<(std::ostream &os) {
     return os;
 }
 
-std::string Player::getName() {
+std::string Player::getName() const{
     return this->m_name;
 }
 
@@ -148,4 +148,8 @@ void Player::lostTo(const BattleCard *monsterCard) {
         --m_force;
     }
         damage(monsterCard->getDamage());
+}
+
+int Player::getCoins() const {
+    return m_coins;
 }

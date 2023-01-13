@@ -77,8 +77,9 @@ public:
     virtual void useBarfightCard();
     virtual void useWellCard();
     virtual std::ostream& operator<<(std::ostream& os);
-    public std::string getName();
-    public void lostTo(const Battlecard* monsterCard);
+    std::string getName() const;
+    void lostTo(const Battlecard* monsterCard);
+    int getCoins() const;
 };
 
 

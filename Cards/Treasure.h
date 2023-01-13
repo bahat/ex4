@@ -8,10 +8,12 @@
 
 class TreasureCard : public Card {
      const int TREASURE_DEFAULT_VALUE = 10;
-     const std::string TREASURE_NAME = "Treasure";
+     const std::string CARD_NAME = "Treasure";
 
 public:
     void playCard(Player &currentPlayer) const override;
+
+    explicit TreasureCard();
 };
 
 

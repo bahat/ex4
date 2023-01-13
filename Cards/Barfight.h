@@ -13,7 +13,6 @@ class BarfightCard: public Card {
 
 public:
     explicit BarfightCard();
-
     void playCard(Player &player) const override;
 
 };
