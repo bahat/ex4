@@ -4,4 +4,12 @@
 
 #include "Gremlin.h"
 
-Gremlin::Gremlin() : BattleCard(GREMLIN_NAME, GREMLIN_FORCE, GREMLIN_DAMAGE, GREMLIN_LOOT) {}
+Gremlin::Gremlin() : BattleCard("Gremlin", GREMLIN_FORCE, GREMLIN_DAMAGE, GREMLIN_LOOT) {}
+
+void Gremlin::playCard(Player &player) const {
+    BattleCard::playCard(player);
+}
+
+std::ostream &Gremlin::operator<<(std::ostream &os) {
+    return BattleCard::operator<<(os);
+}

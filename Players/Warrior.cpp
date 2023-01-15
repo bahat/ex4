@@ -8,7 +8,7 @@ void Warrior::useBarfightCard() {
 
 }
 
-std::string Warrior::getType() {
+std::string Warrior::getType() const {
     return WARRIOR_TYPE;
 }
 

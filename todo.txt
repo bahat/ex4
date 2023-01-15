@@ -1,5 +1,8 @@
 Shit to do :))))
 
+Current Task Omer: Initialization of Player Queue
+
+
 -Mtmchkin:
     -c'tor--> reading deck.txt and creating a queue of cards
         -make sure to use exceptions and override what() functions
@@ -42,7 +45,8 @@ Shit to do :))))
     -in general, go over class and remove dumb shit
 
 -Cards:
-    -
+    -Merchant:
+        -go over
 
 
 -Exceptions:

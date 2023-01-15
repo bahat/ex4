@@ -4,10 +4,20 @@
 #include "Cards/Card.h"
 #include "Players/Player.h"
 #include "Cards/BattleCard.h"
-
+#include "Players/Ninja.h"
+#include "Players/Healer.h"
+#include "Players/Warrior.h"
+#include <queue>
 class Mtmchkin{
 
-
+    void initializePlayers();
+    void newPlayer();
+    std::queue<std::shared_ptr<Player>> m_players;
+    bool isntLetter(char &i);
+protected:
+    static const std::string HEALER_NAME;
+    static const std::string NINJA_NAME;
+    static const std::string WARRIOR_NAME;
 public:
     
     /*
@@ -51,6 +61,8 @@ public:
     *          int - number of rounds played
     */
     int getNumberOfRounds() const;
+
+
 };
 
 

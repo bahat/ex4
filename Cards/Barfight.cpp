@@ -6,9 +6,9 @@
 
 void BarfightCard::playCard(Player &player) const {
     player.useBarfightCard();
-    printBarfightMessage(player.getType()==WARRIOR_TYPE);
+    printBarfightMessage(player.getType()=="Warrior");
 }
-BarfightCard::BarfightCard() : Card(CARD_NAME) {}
+BarfightCard::BarfightCard() : Card("Warrior") {}
 
 
 

@@ -63,4 +63,4 @@ void MerchantCard::playCard(Player &player) const {
 
 }
 
-MerchantCard::MerchantCard() : Card(CARD_NAME) {}
+MerchantCard::MerchantCard() : Card("Merchant") {}

@@ -14,5 +14,8 @@ const int WITCH_LOOT = 2;
 public:
     Witch();
 
+    void playCard(Player &player) const override;
+
+    std::ostream &operator<<(std::ostream &os) override;
 };
 #endif //EX4_WITCH_H

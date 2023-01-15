@@ -7,8 +7,8 @@
 void ManaCard::playCard(Player &player) const
 {
     player.useManaCard();
-    printManaMessage(player.getType()==HEALER_TYPE);
+    printManaMessage(player.getType()=="Healer");
 }
 
-ManaCard::ManaCard() : Card(CARD_NAME) {}
+ManaCard::ManaCard() : Card("Mana") {}
 

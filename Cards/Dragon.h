@@ -7,12 +7,15 @@
 #include "Card.h"
 
 class Dragon : public BattleCard{
-    const std::string DRAGON_NAME = "Dragon";
-    const int DRAGON_FORCE = 25;
-    const int DRAGON_DAMAGE = -1;
-    const int DRAGON_LOOT = 1000;
+    static const int DRAGON_FORCE = 25;
+    static const int DRAGON_DAMAGE = -1;
+    static const int DRAGON_LOOT = 1000;
 public:
     Dragon();
+
+    void playCard(Player &player) const override;
+
+    std::ostream &operator<<(std::ostream &os) override;
 };
 
 

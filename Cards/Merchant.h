@@ -15,7 +15,6 @@ class MerchantCard: public Card {
     static const int NO_PURCHASE_PRICE = 0;
     static const int HEAL_AMOUNT = 1;
     static const int BUFF_AMOUNT = 1;
-    const std::string CARD_NAME = "Merchant";
 public:
     void playCard(Player &player) const override;
 

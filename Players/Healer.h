@@ -12,13 +12,10 @@ const int MANA_CARD_HEAL_AMOUNT = 10;
 const int HEALER_MULTIPLE_HEALING_FACTOR = 2;
 public:
     explicit Healer(const std::string &name);
-
     void heal(int healBy) override;
     std::ostream& printInfo(std::ostream &os) override;
-    std::string getType() override;
+    std::string getType() const override;
     void useManaCard() override;
-
-    void lostTo(const std::string monsterName) override;
 };
 
 

@@ -8,11 +8,11 @@ void Ninja::useWellCard() {
 
 }
 
-void Ninja::addCoins(int toAdd) {
+void Ninja::addCoins(int toAdd){
     Player::addCoins(NINJA_COIN_FACTOR*toAdd);
 }
 
-std::string Ninja::getType() {
+std::string Ninja::getType() const {
     return NINJA_TYPE;
 }
 

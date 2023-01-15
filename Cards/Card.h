@@ -4,16 +4,16 @@
 
 #ifndef EX4_CARD_H
 #define EX4_CARD_H
-#include "../Mtmchkin.h"
-
+#include "../Players/Player.h"
+#include "../Players/Ninja.h"
+#include "../Players/Healer.h"
+#include "../Players/Warrior.h"
 class Card {
 
 
 protected:
-
     std::string m_cardName;
-    Card(std::string name): m_cardName(name)
-    {};
+    Card(std::string name): m_cardName(name){};
 public:
     virtual void playCard(Player&) const=0;
     virtual std::ostream& operator<<(std::ostream& os);

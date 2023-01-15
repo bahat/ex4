@@ -4,7 +4,7 @@
 
 #ifndef EX4_NINJA_H
 #define EX4_NINJA_H
-#include "Player.h"
+#include "./Player.h"
 
 class Ninja : public Player{
 const std::string NINJA_TYPE = "Ninja";
@@ -15,7 +15,7 @@ public:
 
     std::ostream &printInfo(std::ostream &os) override;
 
-    std::string getType() override;
+    std::string getType() const override;
     void useWellCard() override;
 };
 

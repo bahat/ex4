@@ -10,4 +10,4 @@ void TreasureCard::playCard(Player &currentPlayer) const {
     printTreasureMessage();
 }
 
-TreasureCard::TreasureCard() : Card(CARD_NAME) {}
+TreasureCard::TreasureCard() : Card("Treasure") {}

@@ -44,4 +44,8 @@ std::string BattleCard::getType() const {
     return m_cardName;
 }
 
+BattleCard::BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot) : Card(name), m_force(mForce), m_damage(mDamage), m_loot(mLoot)
+{
+}
+
 

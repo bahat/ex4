@@ -15,7 +15,7 @@ public:
 
     std::ostream &printInfo(std::ostream &os) override;
 
-    std::string getType() override;
+    std::string getType() const override;
     void useBarfightCard() override;
 };
 

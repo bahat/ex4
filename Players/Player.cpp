@@ -3,7 +3,14 @@
 //
 
 #include "Player.h"
-Player::Player(const std::string name):
+static const std::string WITCH_NAME="Witch";
+static const std::string GREMLIN_NAME="Gremlin";
+static const std::string DRAGON_NAME="Dragon";
+static const std::string HEALER_NAME="Healer";
+static const std::string NINJA_NAME="Ninja";
+static const std::string WARRIOR_NAME="Warrior";
+
+Player::Player(const std::string &name):
         m_name(name),
         m_maxHP(Player::DEFAULT_MAX_HP),
         m_force(Player::DEFAULT_FORCE),

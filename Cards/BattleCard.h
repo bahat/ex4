@@ -4,15 +4,15 @@
 
 #ifndef EX4_BATTLECARD_H
 #define EX4_BATTLECARD_H
+
 #include "Card.h"
 
-class BattleCard: public Card {
+class BattleCard: public Card{
 protected:
     const int m_force;
     const int m_damage;
     const int m_loot;
-    BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot) : Card(name), m_force(mForce), m_damage(mDamage), m_loot(mLoot)
-    {}
+    BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot);
 
 public:
     void playCard(Player &player) const override;

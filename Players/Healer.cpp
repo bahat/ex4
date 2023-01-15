@@ -13,7 +13,7 @@ std::ostream& Healer::printInfo(std::ostream &os) {
     return os;
 }
 
-std::string Healer::getType()
+std::string Healer::getType() const
 {
     return HEALER_TYPE;
 }

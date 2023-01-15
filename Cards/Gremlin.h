@@ -7,12 +7,15 @@
 #include "Card.h"
 
 class Gremlin: public BattleCard{
-    const std::string GREMLIN_NAME = "Gremlin";
-    const int GREMLIN_FORCE = 5;
-    const int GREMLIN_DAMAGE = 10;
-    const int GREMLIN_LOOT = 2;
+    static const int GREMLIN_FORCE = 5;
+    static const int GREMLIN_DAMAGE = 10;
+    static const int GREMLIN_LOOT = 2;
 public:
     Gremlin();
+
+    void playCard(Player &player) const override;
+
+    std::ostream &operator<<(std::ostream &os) override;
 };
 
 
