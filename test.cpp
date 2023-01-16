@@ -129,7 +129,7 @@ bool cardsPrintsTest()
     Well well;
     Treasure factor;
     Witch witch;
-    cout << junta << std::endl << mushu << std::endl << mana   
+    cout << &junta << std::endl << mushu << std::endl << mana
                     << std::endl << gremlin  << std::endl << pizzaHut
                     << std::endl << well  << std::endl << factor
                     << std::endl << witch;

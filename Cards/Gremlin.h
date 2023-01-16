@@ -13,7 +13,6 @@ class Gremlin: public BattleCard{
 public:
     Gremlin();
 
-    void playCard(Player &player) const override;
 
     std::ostream &operator<<(std::ostream &os) override;
 };

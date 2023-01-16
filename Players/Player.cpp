@@ -124,7 +124,7 @@ int Player::getMaxLevel() {
 }
 
 void Player::useBarfightCard() {
-    damage(BARFIGHT_DAMAGE)
+    damage(BARFIGHT_DAMAGE);
 }
 
 void Player::useWellCard() {
@@ -132,7 +132,7 @@ void Player::useWellCard() {
 }
 
 std::ostream &Player::operator<<(std::ostream &os) {
-    printInfo(os);
+    this->printInfo(os);
     return os;
 }
 

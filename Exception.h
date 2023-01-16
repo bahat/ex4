@@ -41,6 +41,7 @@ public:
 
 class DeckFileInvalidSize : public Exception
 {
+public:
     DeckFileInvalidSize()
     {
         m_errorMessage = "Deck File Error: Deck size is invalid";

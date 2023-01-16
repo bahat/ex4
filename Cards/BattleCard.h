@@ -7,7 +7,7 @@
 
 #include "Card.h"
 
-class BattleCard: public Card{
+class BattleCard :public Card{
 protected:
     const int m_force;
     const int m_damage;
@@ -16,7 +16,7 @@ protected:
 
 public:
     virtual void playCard(Player &player) const override;
-    virtual std::ostream& operator<<(std::ostream& os) override;
+    virtual std::ostream &operator<<(std::ostream &os) override;
     int getForce() const;
     int getDamage() const;
     int getLoot() const;

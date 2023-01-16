@@ -19,7 +19,7 @@
 #include <fstream>
 #include <array>
 class Mtmchkin{
-
+private:
     void initializePlayers();
     void newPlayer();
     std::queue<std::shared_ptr<Player>> m_players;
@@ -28,12 +28,20 @@ class Mtmchkin{
     void initializeDeck(const std::string &fileName);
     bool isValidCard(const std::string cardName);
     void createAndPushNewCard(const std::string cardName);
+    Mtmchkin(const Mtmchkin &toCopy);//in here so won't be available from outside
+    Mtmchkin& operator=(const Mtmchkin &toAssign);//in here so won't be available from outside
+    int m_numberOfRounds;
+    int m_numberOfActivePlayers;
+    std::vector<std::shared_ptr<Player>> m_winners;
+    std::vector<std::shared_ptr<Player>> m_losers;
+
 protected:
     static const std::string HEALER_NAME;
     static const std::string NINJA_NAME;
     static const std::string WARRIOR_NAME;
-    static const int NUM_OF_CARD_OPTIONS = 9;
+    static const int NUM_OF_CARD_OPTIONS = 8;
     static const std::array<std::string, NUM_OF_CARD_OPTIONS> CARD_OPTIONS;
+    static const int MINIMUM_DECK_SIZE = 5;
 
 
 public:

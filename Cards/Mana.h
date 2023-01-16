@@ -2,15 +2,15 @@
 // Created by Omer Bahat on 12/01/2023.
 //
 
-#ifndef EX4_MANACARD_H
-#define EX4_MANACARD_H
+#ifndef EX4_MANA_H
+#define EX4_MANA_H
 #include "Card.h"
 
-class ManaCard : public Card {
+class Mana : public Card {
 public:
     void playCard(Player &player) const override;
-    explicit ManaCard();
+    explicit Mana();
 };
 
 
-#endif //EX4_MANACARD_H
+#endif //EX4_MANA_H

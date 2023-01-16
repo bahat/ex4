@@ -7,15 +7,13 @@
 #include "Card.h"
 
 class Witch:public BattleCard {
-const std::string WITCH_NAME = "Witch";
-const int WITCH_FORCE = 11;
-const int WITCH_DAMAGE = 10;
-const int WITCH_LOOT = 2;
+
+static const int WITCH_FORCE = 11;
+static const int WITCH_DAMAGE = 10;
+static const int WITCH_LOOT = 2;
 public:
     Witch();
-
-    void playCard(Player &player) const override;
-
     std::ostream &operator<<(std::ostream &os) override;
 };
+static const std::string WITCH_NAME = "Witch";
 #endif //EX4_WITCH_H

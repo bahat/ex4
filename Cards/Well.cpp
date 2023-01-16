@@ -4,9 +4,9 @@
 
 #include "Well.h"
 
-void WellCard::playCard(Player &player) const {
+void Well::playCard(Player &player) const {
     player.useWellCard();
     printWellMessage(player.getType()==NINJA_TYPE);
 }
 
-WellCard::WellCard() : Card(CARD_NAME) {}
+Well::Well() : Card(CARD_NAME) {}

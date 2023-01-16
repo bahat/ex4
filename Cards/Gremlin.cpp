@@ -6,9 +6,6 @@
 
 Gremlin::Gremlin() : BattleCard("Gremlin", GREMLIN_FORCE, GREMLIN_DAMAGE, GREMLIN_LOOT) {}
 
-void Gremlin::playCard(Player &player) const {
-    BattleCard::playCard(player);
-}
 
 std::ostream &Gremlin::operator<<(std::ostream &os) {
     return BattleCard::operator<<(os);

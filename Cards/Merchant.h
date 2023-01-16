@@ -6,7 +6,7 @@
 #define EX4_MERCHANTCARD_H
 #include "Card.h"
 
-class MerchantCard: public Card {
+class Merchant: public Card {
     static const int BUY_NOTHING = 0;
     static const int BUY_HP = 1;
     static const int BUY_FORCE = 2;
@@ -18,7 +18,7 @@ class MerchantCard: public Card {
 public:
     void playCard(Player &player) const override;
 
-    explicit MerchantCard();
+    explicit Merchant();
 };
 
 

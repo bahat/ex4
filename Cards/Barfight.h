@@ -11,8 +11,7 @@ class Barfight: public Card {
 
 public:
     explicit Barfight();
-    void playCard(Player &player) const override;
-
-    std::ostream &operator<<(std::ostream &os) override;
+//    void playCard(Player &player) const override;
+    virtual void playCard(Player &player) const override;
 };
 #endif //EX4_BARFIGHT_H

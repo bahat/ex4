@@ -4,7 +4,7 @@
 
 #include "Merchant.h"
 
-void MerchantCard::playCard(Player &player) const {
+void Merchant::playCard(Player &player) const {
     printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
     std::string inputString;
     bool inputInFormat = false;
@@ -63,4 +63,4 @@ void MerchantCard::playCard(Player &player) const {
 
 }
 
-MerchantCard::MerchantCard() : Card("Merchant") {}
+Merchant::Merchant() : Card("Merchant") {}

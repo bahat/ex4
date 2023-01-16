@@ -13,8 +13,6 @@ class Dragon : public BattleCard{
 public:
     Dragon();
 
-    void playCard(Player &player) const override;
-
     std::ostream &operator<<(std::ostream &os) override;
 };
 
