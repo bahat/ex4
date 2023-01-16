@@ -15,7 +15,7 @@ protected:
     std::string m_cardName;
     Card(std::string name): m_cardName(name){};
 public:
-    virtual void playCard(Player&) const=0;
+    virtual void playCard(Player& player) const=0;
     virtual std::ostream& operator<<(std::ostream& os);
 };
 

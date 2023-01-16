@@ -15,8 +15,8 @@ protected:
     BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot);
 
 public:
-    void playCard(Player &player) const override;
-    virtual std::ostream& operator<<(std::ostream& os);
+    virtual void playCard(Player &player) const override;
+    virtual std::ostream& operator<<(std::ostream& os) override;
     int getForce() const;
     int getDamage() const;
     int getLoot() const;

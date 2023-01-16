@@ -3,6 +3,7 @@
 //
 #include "Mtmchkin.h"
 
+
 void Mtmchkin::initializePlayers() {
     printEnterTeamSizeMessage();
     int teamSize;
@@ -67,25 +68,49 @@ void Mtmchkin::newPlayer()
         }
     }
     const std::string playerNameConst = playerName;
-    std::shared_ptr<Player> playerToAdd(nullptr);
-    //
     if(playerClass==Player::NINJA_NAME)
     {
-        playerToAdd= std::shared_ptr<Player>(new Ninja(playerName));
+        m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Ninja>(Ninja(playerName))));
     }
     else if(playerClass==Player::HEALER_NAME)
     {
-        players.push(std::shared_ptr<Player>(new Healer(playerName)));
+        m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Healer>(Healer(playerName))));;
     }
     else if (playerClass==Player::WARRIOR_NAME)
     {
-        players.push(std::shared_ptr<Player>(new Warrior(playerName)));
+        m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Warrior>(Warrior(playerName))));;
     }
 }
 
 
 Mtmchkin::Mtmchkin(const std::string &fileName) {
+
     initializePlayers();
+}
+
+void Mtmchkin::initializeDeck(const std::string &fileName) {
+    std::ifstream deckFile(fileName);
+    std::string tempCardName;
+    if(deckFile.is_open())
+    {
+        std::getline(deckFile, tempCardName);
+        if(isValidCard(tempCardName))
+        {
+            createAndPushNewCard(tempCardName);
+        }
+    }
+}
+
+bool Mtmchkin::isValidCard(const std::string cardName) {
+    return std::find(CARD_OPTIONS.begin(), CARD_OPTIONS.end(), cardName)!=CARD_OPTIONS.end();
+}
+
+void Mtmchkin::createAndPushNewCard(const std::string cardName) {
+    if(cardName==CARD_OPTIONS[0])
+    {
+
+        m_cards.push(std::shared_ptr<Barfight>(Barfight()));
+    }
 }
 
 void Mtmchkin::playRound() {

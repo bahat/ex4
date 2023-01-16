@@ -9,14 +9,14 @@
 class Warrior : public Player{
 const std::string WARRIOR_TYPE = "Warrior";
 public:
-    int getAttackStrength() override;
+    virtual int getAttackStrength() override;
 
     explicit Warrior(const std::string &name);
 
-    std::ostream &printInfo(std::ostream &os) override;
+    virtual std::ostream &printInfo(std::ostream &os) override;
 
-    std::string getType() const override;
-    void useBarfightCard() override;
+    virtual std::string getType() const override;
+    virtual void useBarfightCard() override;
 };
 
 

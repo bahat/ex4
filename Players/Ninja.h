@@ -11,12 +11,12 @@ const std::string NINJA_TYPE = "Ninja";
 const int NINJA_COIN_FACTOR = 2;
 public:
     explicit Ninja(const std::string &name);
-    void addCoins(int toAdd) override;
+    virtual void addCoins(int toAdd) override;
 
-    std::ostream &printInfo(std::ostream &os) override;
+    virtual std::ostream &printInfo(std::ostream &os) override;
 
-    std::string getType() const override;
-    void useWellCard() override;
+    virtual std::string getType() const override;
+    virtual void useWellCard() override;
 };
 
 

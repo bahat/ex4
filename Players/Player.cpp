@@ -19,10 +19,6 @@ Player::Player(const std::string &name):
         m_level(Player::DEFAULT_LEVEL)
 {
 }
-Player::Player(const Player &toCopy)=default;
-Player::~Player()=default;
-Player& Player::operator=(const Player &toImplement) = default;
-
 
 void Player::levelUp()
 {

@@ -2,18 +2,17 @@
 // Created by Omer Bahat on 12/01/2023.
 //
 
-#ifndef EX4_BARFIGHTCARD_H
-#define EX4_BARFIGHTCARD_H
+#ifndef EX4_BARFIGHT_H
+#define EX4_BARFIGHT_H
 #include "Card.h"
 
-class BarfightCard: public Card {
+class Barfight: public Card {
 
 
 public:
-    explicit BarfightCard();
+    explicit Barfight();
     void playCard(Player &player) const override;
 
+    std::ostream &operator<<(std::ostream &os) override;
 };
-
-
-#endif //EX4_BARFIGHTCARD_H
+#endif //EX4_BARFIGHT_H

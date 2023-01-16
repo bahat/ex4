@@ -2,22 +2,40 @@
 #define MTMCHKIN_H_
 #include "utilities.h"
 #include "Cards/Card.h"
-#include "Players/Player.h"
 #include "Cards/BattleCard.h"
+#include "Cards/Barfight.h"
+#include "Cards/Dragon.h"
+#include "Cards/Gremlin.h"
+#include "Cards/Mana.h"
+#include "Cards/Merchant.h"
+#include "Cards/Treasure.h"
+#include "Cards/Well.h"
+#include "Cards/Witch.h"
+#include "Players/Player.h"
 #include "Players/Ninja.h"
 #include "Players/Healer.h"
 #include "Players/Warrior.h"
 #include <queue>
+#include <fstream>
+#include <array>
 class Mtmchkin{
 
     void initializePlayers();
     void newPlayer();
     std::queue<std::shared_ptr<Player>> m_players;
+    std::queue<std::shared_ptr<Card>> m_cards;
     bool isntLetter(char &i);
+    void initializeDeck(const std::string &fileName);
+    bool isValidCard(const std::string cardName);
+    void createAndPushNewCard(const std::string cardName);
 protected:
     static const std::string HEALER_NAME;
     static const std::string NINJA_NAME;
     static const std::string WARRIOR_NAME;
+    static const int NUM_OF_CARD_OPTIONS = 9;
+    static const std::array<std::string, NUM_OF_CARD_OPTIONS> CARD_OPTIONS;
+
+
 public:
     
     /*
@@ -65,6 +83,6 @@ public:
 
 };
 
-
+const std::array<std::string, Mtmchkin::NUM_OF_CARD_OPTIONS> Mtmchkin::CARD_OPTIONS = {"Barfight", "Dragon", "Gremlin", "Mana", "Merchant", "Treasure", "Well", "Witch"};
 
 #endif /* MTMCHKIN_H_ */
