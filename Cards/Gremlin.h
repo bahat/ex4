@@ -4,7 +4,7 @@
 
 #ifndef EX4_GREMLIN_H
 #define EX4_GREMLIN_H
-#include "Card.h"
+#include "BattleCard.h"
 
 class Gremlin: public BattleCard{
     static const int GREMLIN_FORCE = 5;

@@ -4,7 +4,7 @@
 
 #ifndef EX4_DRAGON_H
 #define EX4_DRAGON_H
-#include "Card.h"
+#include "BattleCard.h"
 
 class Dragon : public BattleCard{
     static const int DRAGON_FORCE = 25;

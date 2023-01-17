@@ -9,7 +9,7 @@
 class Well: public Card{
     const std::string NINJA_TYPE = "Ninja";
 public:
-    void playCard(Player &player) const override;
+    void playCard(Player &player) override;
     explicit Well();
 };
 static const std::string CARD_NAME = "Well";

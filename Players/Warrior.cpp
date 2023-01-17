@@ -22,3 +22,7 @@ std::ostream &Warrior::printInfo(std::ostream &os) {
     printPlayerDetails(os, m_name, WARRIOR_TYPE, m_level, m_force, m_HP, m_coins);
     return os;
 }
+
+std::ostream &Warrior::operator<<(std::ostream &os) {
+    return Player::operator<<(os);
+}

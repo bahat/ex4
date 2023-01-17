@@ -16,7 +16,7 @@ class Merchant: public Card {
     static const int HEAL_AMOUNT = 1;
     static const int BUFF_AMOUNT = 1;
 public:
-    void playCard(Player &player) const override;
+    void playCard(Player &player) override;
 
     explicit Merchant();
 };

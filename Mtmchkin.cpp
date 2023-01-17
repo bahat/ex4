@@ -187,7 +187,7 @@ void Mtmchkin::playRound() {
         for(int i = 0; i<currentRoundActivePlayers; i++)
         {
             printTurnStartMessage(m_players.front()->getName());
-            m_cards.front()->playCard(m_players.front());
+            m_cards.front()->playCard(*m_players.front());
             if(m_players.front()->isKnockedOut())
             {
                 m_losers.push_back(m_players.front());

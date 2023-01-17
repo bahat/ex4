@@ -22,3 +22,7 @@ std::ostream &Ninja::printInfo(std::ostream &os) {
 }
 
 Ninja::Ninja(const std::string &name) : Player(name) {}
+
+std::ostream &Ninja::operator<<(std::ostream &os) {
+    return Player::operator<<(os);
+}

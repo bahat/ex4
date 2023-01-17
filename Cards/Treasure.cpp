@@ -5,7 +5,7 @@
 #include "Treasure.h"
 
 
-void Treasure::playCard(Player &currentPlayer) const {
+void Treasure::playCard(Player &currentPlayer) {
     currentPlayer.addCoins(TREASURE_DEFAULT_VALUE);
     printTreasureMessage();
 }

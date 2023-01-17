@@ -140,19 +140,21 @@ std::string Player::getName() const{
     return this->m_name;
 }
 
-void Player::lostTo(const BattleCard *monsterCard) {
-    if(monsterCard->getType()==DRAGON_NAME)
-    {
-        m_HP = ZERO;
-        return;
-    }
-    else if (monsterCard->getType()==WITCH_NAME)
-    {
-        --m_force;
-    }
-        damage(monsterCard->getDamage());
+void Player::killPlayer() {
+    m_HP = 0;
 }
 
 int Player::getCoins() const {
     return m_coins;
+}
+
+void Player::deBuff(int deBuffBy) {
+    if(m_force-deBuffBy <0)
+    {
+        m_force = 0;
+    }
+    else
+    {
+        m_force-=deBuffBy;
+    }
 }

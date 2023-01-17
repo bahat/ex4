@@ -5,8 +5,6 @@
 #ifndef EX4_PLAYER_H
 #define EX4_PLAYER_H
 #include <string>
-#include "../utilities.h"
-#include "../Cards/BattleCard.h"
 
 class Player {
 public:
@@ -72,7 +70,8 @@ public:
     virtual void useWellCard();
     virtual std::ostream &operator<<(std::ostream &os);
     std::string getName() const;
-    void lostTo(const BattleCard*);
+    void killPlayer();
+    void deBuff(int deBuffBy);
     int getCoins() const;
 };
 #endif //EX4_PLAYER_H

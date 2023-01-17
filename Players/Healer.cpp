@@ -24,4 +24,8 @@ void Healer::useManaCard() {
 
 Healer::Healer(const std::string &name) : Player(name) {}
 
+std::ostream &Healer::operator<<(std::ostream &os) {
+    return Player::operator<<(os);
+}
+
 

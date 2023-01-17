@@ -8,7 +8,7 @@
 
 class Mana : public Card {
 public:
-    void playCard(Player &player) const override;
+    void playCard(Player &player) override;
     explicit Mana();
 };
 

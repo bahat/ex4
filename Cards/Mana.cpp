@@ -4,7 +4,7 @@
 
 #include "Mana.h"
 
-void Mana::playCard(Player &player) const
+void Mana::playCard(Player &player)
 {
     player.useManaCard();
     printManaMessage(player.getType()=="Healer");

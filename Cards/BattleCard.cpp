@@ -32,7 +32,7 @@ std::string BattleCard::getType() const {
 BattleCard::BattleCard(const std::string &name, const int mForce, const int mDamage, const int mLoot) : Card(name), m_force(mForce), m_damage(mDamage), m_loot(mLoot)
 {
 }
-void BattleCard::playCard(Player &player) const {
+void BattleCard::playCard(Player &player) {
     if(player.getAttackStrength()>=this->m_force)
     {
         //win
@@ -43,7 +43,7 @@ void BattleCard::playCard(Player &player) const {
     else
     {
         //loss
-        player.lostTo(this);
+        lostTo(player);
         printLossBattle(player.getName(), m_cardName);
     }
 }
@@ -55,4 +55,16 @@ std::ostream &BattleCard::operator<<(std::ostream &os) {
     return os;
 }
 
+void BattleCard::lostTo(Player &player){
+    if(m_cardName==Player::DRAGON_NAME)
+    {
+        player.killPlayer();
+        return;
+    }
+    else if (m_cardName==Player::WITCH_NAME)
+    {
 
+        player.deBuff(1);
+    }
+    player.damage(m_damage);
+}
