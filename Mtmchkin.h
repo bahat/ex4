@@ -23,7 +23,7 @@ private:
     void initializePlayers();
     void newPlayer();
     std::queue<std::shared_ptr<Player>> m_players;
-    std::queue<std::shared_ptr<Card>> m_cards;
+    std::queue<std::unique_ptr<Card>> m_cards;
     bool isntLetter(char &i);
     void initializeDeck(const std::string &fileName);
     bool isValidCard(const std::string cardName);

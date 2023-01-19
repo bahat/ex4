@@ -12,9 +12,7 @@ void Barfight::playCard(Player &player) {
     printBarfightMessage(player.getType()=="Warrior");
 }
 
-std::ostream &Barfight::operator<<(std::ostream &os) {
-    return Card::operator<<(os);
-}
+
 
 
 

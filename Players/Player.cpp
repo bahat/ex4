@@ -131,11 +131,6 @@ void Player::useWellCard() {
     damage(WELL_DAMAGE);
 }
 
-std::ostream &Player::operator<<(std::ostream &os) {
-    this->printInfo(os);
-    return os;
-}
-
 std::string Player::getName() const{
     return this->m_name;
 }

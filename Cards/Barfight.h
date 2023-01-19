@@ -12,7 +12,5 @@ public:
     explicit Barfight();
 //    void playCard(Player &player) const override;
     virtual void playCard(Player &player) override;
-
-    std::ostream &operator<<(std::ostream &os) override;
 };
 #endif //EX4_BARFIGHT_H

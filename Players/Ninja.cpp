@@ -16,13 +16,10 @@ std::string Ninja::getType() const {
     return NINJA_TYPE;
 }
 
-std::ostream &Ninja::printInfo(std::ostream &os) {
-    printPlayerDetails(os, m_name, NINJA_TYPE, m_level, m_force, m_HP, m_coins);
-    return os;
-}
 
 Ninja::Ninja(const std::string &name) : Player(name) {}
 
-std::ostream &Ninja::operator<<(std::ostream &os) {
-    return Player::operator<<(os);
+std::ostream &Ninja::operator<<(std::ostream &os) const{
+    printPlayerDetails(os, m_name, NINJA_TYPE, m_level, m_force, m_HP, m_coins);
+    return os;
 }

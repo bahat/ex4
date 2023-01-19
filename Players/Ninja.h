@@ -13,9 +13,7 @@ public:
     explicit Ninja(const std::string &name);
     virtual void addCoins(int toAdd) override;
 
-    virtual std::ostream &printInfo(std::ostream &os) override;
-
-    std::ostream &operator<<(std::ostream &os) override;
+    std::ostream &operator<<(std::ostream &os) const;
 
     virtual std::string getType() const override;
     virtual void useWellCard() override;

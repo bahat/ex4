@@ -7,7 +7,3 @@
 Dragon::Dragon() : BattleCard("Dragon", DRAGON_FORCE, DRAGON_DAMAGE, DRAGON_LOOT){}
 
 
-std::ostream &Dragon::operator<<(std::ostream &os) {
-    return BattleCard::operator<<(os);
-}
-

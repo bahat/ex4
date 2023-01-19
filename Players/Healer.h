@@ -14,9 +14,8 @@ const int HEALER_MULTIPLE_HEALING_FACTOR = 2;
 public:
     explicit Healer(const std::string &name);
     virtual void heal(int healBy) override;
-    virtual std::ostream& printInfo(std::ostream &os) override;
 
-    std::ostream &operator<<(std::ostream &os) override;
+    std::ostream &operator<<(std::ostream &os) const;
 
     virtual std::string getType() const override;
     virtual void useManaCard() override;

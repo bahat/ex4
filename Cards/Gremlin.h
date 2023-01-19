@@ -14,7 +14,6 @@ public:
     Gremlin();
 
 
-    std::ostream &operator<<(std::ostream &os) override;
 };
 
 

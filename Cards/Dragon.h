@@ -12,8 +12,6 @@ class Dragon : public BattleCard{
     static const int DRAGON_LOOT = 1000;
 public:
     Dragon();
-
-    std::ostream &operator<<(std::ostream &os) override;
 };
 
 

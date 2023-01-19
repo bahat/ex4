@@ -8,10 +8,6 @@ void Healer::heal(int healBy) {
     Player::heal(HEALER_MULTIPLE_HEALING_FACTOR*healBy);
 }
 
-std::ostream& Healer::printInfo(std::ostream &os) {
-    printPlayerDetails(os, m_name, HEALER_TYPE, m_level, m_force, m_HP, m_coins);
-    return os;
-}
 
 std::string Healer::getType() const
 {
@@ -24,8 +20,9 @@ void Healer::useManaCard() {
 
 Healer::Healer(const std::string &name) : Player(name) {}
 
-std::ostream &Healer::operator<<(std::ostream &os) {
-    return Player::operator<<(os);
+std::ostream &Healer::operator<<(std::ostream &os) const {
+    printPlayerDetails(os, m_name, HEALER_TYPE, m_level, m_force, m_HP, m_coins);
+    return os;
 }
 
 

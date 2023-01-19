@@ -18,11 +18,8 @@ int Warrior::getAttackStrength() {
 
 Warrior::Warrior(const std::string &name) : Player(name) {}
 
-std::ostream &Warrior::printInfo(std::ostream &os) {
+
+std::ostream &Warrior::operator<<(std::ostream &os) const {
     printPlayerDetails(os, m_name, WARRIOR_TYPE, m_level, m_force, m_HP, m_coins);
     return os;
-}
-
-std::ostream &Warrior::operator<<(std::ostream &os) {
-    return Player::operator<<(os);
 }

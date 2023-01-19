@@ -33,8 +33,6 @@ protected:
     int m_level;
 public:
     virtual std::string getType() const = 0;
-    /// @brief Prints Player info according to format specified in utilities.h
-    virtual std::ostream &printInfo(std::ostream &os) = 0;
     /// @brief Increases level by 1, if level is maximal, does nothing
     void levelUp();
     /// @brief Gets current level of Player
@@ -68,10 +66,10 @@ public:
     virtual void useManaCard() {};
     virtual void useBarfightCard();
     virtual void useWellCard();
-    virtual std::ostream &operator<<(std::ostream &os);
     std::string getName() const;
     void killPlayer();
     void deBuff(int deBuffBy);
     int getCoins() const;
 };
+std::ostream& operator<<(std::ostream& os, const Player &player);
 #endif //EX4_PLAYER_H
