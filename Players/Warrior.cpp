@@ -4,6 +4,7 @@
 
 #include "Warrior.h"
 
+const std::string WARRIOR_TYPE = "Warrior";
 void Warrior::useBarfightCard() {
 
 }
@@ -18,8 +19,8 @@ int Warrior::getAttackStrength() {
 
 Warrior::Warrior(const std::string &name) : Player(name) {}
 
-
-std::ostream &Warrior::operator<<(std::ostream &os) const {
-    printPlayerDetails(os, m_name, WARRIOR_TYPE, m_level, m_force, m_HP, m_coins);
+std::ostream &operator<<(std::ostream &os, const Warrior &player) {
+    printPlayerDetails(os, player.getName(), WARRIOR_TYPE, player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
     return os;
 }
+

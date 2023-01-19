@@ -3,7 +3,8 @@
 //
 
 #include "BattleCard.h"
-
+const std::string DRAGON_NAME = "Dragon";
+const std::string WITCH_NAME = "Witch";
 //std::ostream &BattleCard::operator<<(std::ostream &os) {
 
 //}
@@ -48,20 +49,17 @@ void BattleCard::playCard(Player &player) {
     }
 }
 
-std::ostream &BattleCard::operator<<(std::ostream &os) {
-    printCardDetails(os, m_cardName);
+void BattleCard::monsterPrinting(std::ostream &os) const{
     printMonsterDetails(os, m_force, m_damage, m_loot, (m_cardName=="Dragon"));
-    printEndOfCardDetails(os);
-    return os;
 }
 
 void BattleCard::lostTo(Player &player){
-    if(m_cardName==Player::DRAGON_NAME)
+    if(m_cardName==DRAGON_NAME)
     {
         player.killPlayer();
         return;
     }
-    else if (m_cardName==Player::WITCH_NAME)
+    else if (m_cardName==WITCH_NAME)
     {
 
         player.deBuff(1);

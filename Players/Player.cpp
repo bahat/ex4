@@ -153,3 +153,13 @@ void Player::deBuff(int deBuffBy) {
         m_force-=deBuffBy;
     }
 }
+
+int Player::getForce() const {
+    return m_force;
+}
+
+int Player::getHP() const {
+    return m_HP;
+}
+
+std::ostream &operator<<(std::ostream &os, const Player &player) {}

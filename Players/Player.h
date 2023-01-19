@@ -70,6 +70,8 @@ public:
     void killPlayer();
     void deBuff(int deBuffBy);
     int getCoins() const;
+    int getForce() const;
+    int getHP() const;
 };
 std::ostream& operator<<(std::ostream& os, const Player &player);
 #endif //EX4_PLAYER_H

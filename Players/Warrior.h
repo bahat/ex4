@@ -7,17 +7,16 @@
 #include "Player.h"
 #include "utilities.h"
 class Warrior : public Player{
-const std::string WARRIOR_TYPE = "Warrior";
 public:
     virtual int getAttackStrength() override;
 
     explicit Warrior(const std::string &name);
 
-    std::ostream &operator<<(std::ostream &os) const;
 
     virtual std::string getType() const override;
     virtual void useBarfightCard() override;
 };
 
+std::ostream &operator<<(std::ostream &os, const Warrior &player);
 
 #endif //EX4_WARRIOR_H

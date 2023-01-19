@@ -16,8 +16,10 @@
 #include "Players/Healer.h"
 #include "Players/Warrior.h"
 #include <queue>
+#include <memory>
 #include <fstream>
 #include <array>
+#include <algorithm>
 class Mtmchkin{
 private:
     void initializePlayers();
@@ -36,11 +38,6 @@ private:
     std::vector<std::shared_ptr<Player>> m_losers;
 
 protected:
-    static const std::string HEALER_NAME;
-    static const std::string NINJA_NAME;
-    static const std::string WARRIOR_NAME;
-    static const int NUM_OF_CARD_OPTIONS = 8;
-    static const std::array<std::string, NUM_OF_CARD_OPTIONS> CARD_OPTIONS;
     static const int MINIMUM_DECK_SIZE = 5;
 
 
@@ -90,7 +87,7 @@ public:
 
 
 };
-
-const std::array<std::string, Mtmchkin::NUM_OF_CARD_OPTIONS> Mtmchkin::CARD_OPTIONS = {"Barfight", "Dragon", "Gremlin", "Mana", "Merchant", "Treasure", "Well", "Witch"};
+static const int NUM_OF_CARD_OPTIONS = 8;
+const std::array<std::string, NUM_OF_CARD_OPTIONS> CARD_OPTIONS = {"Barfight", "Dragon", "Gremlin", "Mana", "Merchant", "Treasure", "Well", "Witch"};
 
 #endif /* MTMCHKIN_H_ */

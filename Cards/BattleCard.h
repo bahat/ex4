@@ -16,8 +16,7 @@ protected:
 
 public:
     virtual void playCard(Player &player) override;
-
-    virtual std::ostream &operator<<(std::ostream &os);
+    void monsterPrinting(std::ostream &os) const override;
     int getForce() const;
     int getDamage() const;
     int getLoot() const;

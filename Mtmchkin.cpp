@@ -3,7 +3,9 @@
 //
 #include "Mtmchkin.h"
 
-
+ const std::string HEALER_NAME = "Healer";
+ const std::string NINJA_NAME = "Ninja";
+ const std::string WARRIOR_NAME= "Warrior";
 void Mtmchkin::initializePlayers() {
     printEnterTeamSizeMessage();
     int teamSize;
@@ -80,15 +82,15 @@ void Mtmchkin::newPlayer()
             if(completelyValidInput)
             {
                 //check class
-                if(playerClass==Player::NINJA_NAME)
+                if(playerClass==NINJA_NAME)
                 {
                     m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Ninja>(Ninja(playerName))));
                 }
-                else if(playerClass==Player::HEALER_NAME)
+                else if(playerClass==HEALER_NAME)
                 {
                     m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Healer>(Healer(playerName))));
                 }
-                else if (playerClass==Player::WARRIOR_NAME)
+                else if (playerClass==WARRIOR_NAME)
                 {
                     m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Warrior>(Warrior(playerName))));
                 }
@@ -141,7 +143,7 @@ void Mtmchkin::initializeDeck(const std::string &fileName) {
 }
 
 bool Mtmchkin::isValidCard(const std::string cardName) {
-    return std::find(CARD_OPTIONS.begin(), CARD_OPTIONS.end(), cardName)!=CARD_OPTIONS.end();
+    return CARD_OPTIONS.end() != std::find(CARD_OPTIONS.begin(), CARD_OPTIONS.end(), cardName);
 }
 
 void Mtmchkin::createAndPushNewCard(const std::string cardName) {

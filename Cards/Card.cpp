@@ -4,12 +4,15 @@
 
 #include "Card.h"
 
-std::ostream &operator<<(std::ostream &os, Card &card) {
-    printCardDetails(os, card.getName());
-    printEndOfCardDetails(os);
-    return os;
+
+std::string Card::getName() const {
+    return m_cardName;
 }
 
-std::string Card::getName() {
-    return m_cardName;
+std::ostream &operator<<(std::ostream &os, const Card &card)
+{
+        printCardDetails(os, card.getName());
+        card.monsterPrinting(os);
+        printEndOfCardDetails(os);
+        return os;
 }

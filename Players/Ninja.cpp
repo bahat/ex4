@@ -3,6 +3,8 @@
 //
 
 #include "Ninja.h"
+const std::string NINJA_TYPE = "Ninja";
+const int NINJA_COIN_FACTOR = 2;
 
 void Ninja::useWellCard() {
 
@@ -19,7 +21,9 @@ std::string Ninja::getType() const {
 
 Ninja::Ninja(const std::string &name) : Player(name) {}
 
-std::ostream &Ninja::operator<<(std::ostream &os) const{
-    printPlayerDetails(os, m_name, NINJA_TYPE, m_level, m_force, m_HP, m_coins);
+
+
+std::ostream &operator<<(std::ostream &os, const Ninja &player) {
+    printPlayerDetails(os, player.getName(), NINJA_TYPE, player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
     return os;
 }
