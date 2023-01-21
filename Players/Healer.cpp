@@ -10,18 +10,12 @@ void Healer::heal(int healBy) {
 }
 
 
-std::string Healer::getType() const
-{
-    return HEALER_TYPE;
-}
 
 void Healer::useManaCard() {
     this->heal(MANA_CARD_HEAL_AMOUNT);
 }
 
-Healer::Healer(const std::string &name) : Player(name) {}
-
+Healer::Healer(const std::string &name) : Player(name, HEALER_TYPE) {}
 std::ostream &operator<<(std::ostream &os, const Healer &player) {
-    printPlayerDetails(os, player.getName(), HEALER_TYPE, player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
-    return os;
+    return os<<(Player)player;
 }

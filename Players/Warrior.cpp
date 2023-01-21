@@ -9,18 +9,14 @@ void Warrior::useBarfightCard() {
 
 }
 
-std::string Warrior::getType() const {
-    return WARRIOR_TYPE;
-}
 
 int Warrior::getAttackStrength() {
     return 2*m_force+m_level;
 }
 
-Warrior::Warrior(const std::string &name) : Player(name) {}
+Warrior::Warrior(const std::string &name) : Player(name, WARRIOR_TYPE) {}
+
 
 std::ostream &operator<<(std::ostream &os, const Warrior &player) {
-    printPlayerDetails(os, player.getName(), WARRIOR_TYPE, player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
-    return os;
+    return os<<(Player)player;
 }
-

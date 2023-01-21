@@ -11,7 +11,7 @@ public:
     static const int DEFAULT_MAX_HP = 100;
     static const int DEFAULT_FORCE = 5;
     static const int DEFAULT_LEVEL = 1;
-    static const int DEFAULT_COINS = 0;
+    static const int DEFAULT_COINS = 10;
     static const int MAX_LEVEL = 10;
     static const int ZERO = 0;
     static const int BARFIGHT_DAMAGE = 10;
@@ -22,7 +22,7 @@ public:
     static const std::string HEALER_NAME;
     static const std::string NINJA_NAME;
     static const std::string WARRIOR_NAME;
-    Player(const std::string &name);
+    Player(const std::string &name, const std::string &type);
 
 protected:
     std::string m_name;
@@ -31,8 +31,8 @@ protected:
     int m_HP;
     int m_coins;
     int m_level;
+    std::string m_type;
 public:
-    virtual std::string getType() const = 0;
     /// @brief Increases level by 1, if level is maximal, does nothing
     void levelUp();
     /// @brief Gets current level of Player
@@ -72,6 +72,7 @@ public:
     int getCoins() const;
     int getForce() const;
     int getHP() const;
+    std::string getType() const;
 };
 std::ostream& operator<<(std::ostream& os, const Player &player);
 #endif //EX4_PLAYER_H

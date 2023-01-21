@@ -13,7 +13,6 @@ public:
     explicit Warrior(const std::string &name);
 
 
-    virtual std::string getType() const override;
     virtual void useBarfightCard() override;
 };
 

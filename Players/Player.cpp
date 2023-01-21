@@ -3,6 +3,8 @@
 //
 
 #include "Player.h"
+#include "utilities.h"
+
 static const std::string WITCH_NAME="Witch";
 static const std::string GREMLIN_NAME="Gremlin";
 static const std::string DRAGON_NAME="Dragon";
@@ -10,8 +12,9 @@ static const std::string HEALER_NAME="Healer";
 static const std::string NINJA_NAME="Ninja";
 static const std::string WARRIOR_NAME="Warrior";
 
-Player::Player(const std::string &name):
+Player::Player(const std::string &name, const std::string &type):
         m_name(name),
+        m_type(type),
         m_maxHP(Player::DEFAULT_MAX_HP),
         m_force(Player::DEFAULT_FORCE),
         m_HP(Player::DEFAULT_MAX_HP),
@@ -162,4 +165,12 @@ int Player::getHP() const {
     return m_HP;
 }
 
-std::ostream &operator<<(std::ostream &os, const Player &player) {return os;}
+std::string Player::getType() const {
+    return m_type;
+}
+
+std::ostream &operator<<(std::ostream &os, const Player &player)
+{
+    printPlayerDetails(os, player.getName(), player.getType(), player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
+    return os;
+}

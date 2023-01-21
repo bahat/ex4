@@ -14,16 +14,10 @@ void Ninja::addCoins(int toAdd){
     Player::addCoins(NINJA_COIN_FACTOR*toAdd);
 }
 
-std::string Ninja::getType() const {
-    return NINJA_TYPE;
-}
 
-
-Ninja::Ninja(const std::string &name) : Player(name) {}
-
-
+Ninja::Ninja(const std::string &name) : Player(name, NINJA_TYPE) {}
 
 std::ostream &operator<<(std::ostream &os, const Ninja &player) {
-    printPlayerDetails(os, player.getName(), NINJA_TYPE, player.getLevel(), player.getForce(), player.getHP(), player.getCoins());
-    return os;
+    return os<<(Player)player;
 }
+
