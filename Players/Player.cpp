@@ -162,4 +162,4 @@ int Player::getHP() const {
     return m_HP;
 }
 
-std::ostream &operator<<(std::ostream &os, const Player &player) {}
+std::ostream &operator<<(std::ostream &os, const Player &player) {return os;}

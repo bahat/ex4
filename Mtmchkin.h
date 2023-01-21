@@ -24,7 +24,7 @@ class Mtmchkin{
 private:
     void initializePlayers();
     void newPlayer();
-    std::queue<std::shared_ptr<Player>> m_players;
+    std::deque<std::unique_ptr<Player>> m_players;
     std::queue<std::unique_ptr<Card>> m_cards;
     bool isntLetter(char &i);
     void initializeDeck(const std::string &fileName);
@@ -34,8 +34,8 @@ private:
     Mtmchkin& operator=(const Mtmchkin &toAssign);//in here so won't be available from outside
     int m_numberOfRounds;
     int m_numberOfActivePlayers;
-    std::vector<std::shared_ptr<Player>> m_winners;
-    std::vector<std::shared_ptr<Player>> m_losers;
+    std::vector<std::unique_ptr<Player>> m_winners;
+    std::vector<std::unique_ptr<Player>> m_losers;
 
 protected:
     static const int MINIMUM_DECK_SIZE = 5;

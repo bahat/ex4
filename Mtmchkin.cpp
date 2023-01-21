@@ -3,12 +3,15 @@
 //
 #include "Mtmchkin.h"
 
+#include <memory>
+
  const std::string HEALER_NAME = "Healer";
  const std::string NINJA_NAME = "Ninja";
  const std::string WARRIOR_NAME= "Warrior";
 void Mtmchkin::initializePlayers() {
     printEnterTeamSizeMessage();
-    int teamSize;
+    int teamSize=0;
+
     bool firstIteration = true;
     do {
         if(firstIteration)
@@ -20,7 +23,7 @@ void Mtmchkin::initializePlayers() {
             printInvalidTeamSize();
             printEnterTeamSizeMessage();
         }
-        while((!std::cin>>teamSize))
+        while(!(std::cin>>teamSize))
         {
             printInvalidTeamSize();
             printEnterTeamSizeMessage();
@@ -44,7 +47,7 @@ void Mtmchkin::newPlayer()
     std::string playerClass;
     while(!completelyValidInput)
     {
-        if(!(std::cin >> inputString))
+        if(!(std::getline(std::cin, inputString)))
         {
             printInvalidName();
             printInsertPlayerMessage();
@@ -84,15 +87,15 @@ void Mtmchkin::newPlayer()
                 //check class
                 if(playerClass==NINJA_NAME)
                 {
-                    m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Ninja>(Ninja(playerName))));
+                    m_players.push_back(std::make_unique<Ninja>(playerName));
                 }
                 else if(playerClass==HEALER_NAME)
                 {
-                    m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Healer>(Healer(playerName))));
+                    m_players.push_back(std::make_unique<Healer>(playerName));
                 }
                 else if (playerClass==WARRIOR_NAME)
                 {
-                    m_players.push(std::dynamic_pointer_cast<Player>(std::make_shared<Warrior>(Warrior(playerName))));
+                    m_players.push_back(std::make_unique<Healer>(playerName));
                 }
                 else
                 {
@@ -150,35 +153,35 @@ void Mtmchkin::createAndPushNewCard(const std::string cardName) {
     if(cardName==CARD_OPTIONS[0])
     {
 
-        m_cards.push(std::unique_ptr<Barfight>());
+        m_cards.push(std::make_unique<Barfight>());
     }
     else if(cardName==CARD_OPTIONS[1])
     {
-        m_cards.push(std::unique_ptr<Dragon>());
+        m_cards.push(std::make_unique<Dragon>());
     }
     else if(cardName==CARD_OPTIONS[2])
     {
-        m_cards.push(std::unique_ptr<Gremlin>());
+        m_cards.push(std::make_unique<Gremlin>());
     }
     else if(cardName==CARD_OPTIONS[3])
     {
-        m_cards.push(std::unique_ptr<Mana>());
+        m_cards.push(std::make_unique<Mana>());
     }
     else if(cardName==CARD_OPTIONS[4])
     {
-        m_cards.push(std::unique_ptr<Merchant>());
+        m_cards.push(std::make_unique<Merchant>());
     }
     else if(cardName==CARD_OPTIONS[5])
     {
-        m_cards.push(std::unique_ptr<Treasure>());
+        m_cards.push(std::make_unique<Treasure>());
     }
     else if(cardName==CARD_OPTIONS[6])
     {
-        m_cards.push(std::unique_ptr<Well>());
+        m_cards.push(std::make_unique<Well>());
     }
     else if(cardName==CARD_OPTIONS[7])
     {
-        m_cards.push(std::unique_ptr<Witch>());
+        m_cards.push(std::make_unique<Witch>());
     }
 }
 
@@ -198,20 +201,20 @@ void Mtmchkin::playRound() {
             m_cards.front()->playCard(*m_players.front());
             if(m_players.front()->isKnockedOut())
             {
-                m_losers.push_back(m_players.front());
-                m_players.pop();
+                m_losers.push_back(std::move(m_players.front()));
+                m_players.pop_front();
                 m_numberOfActivePlayers--;
             }
             else if(m_players.front()->getLevel()==Player::getMaxLevel())
             {
-                m_winners.push_back(m_players.front());
-                m_players.pop();
+                m_winners.push_back(std::move(m_players.front()));
+                m_players.pop_front();
                 m_numberOfActivePlayers--;
             }
             else
             {
-                m_players.push(m_players.front());
-                m_players.pop();
+                m_players.push_back(std::move(m_players.front()));
+                m_players.pop_front();
             }
             m_cards.push(std::move(m_cards.front()));
             m_cards.pop();
@@ -233,12 +236,9 @@ void Mtmchkin::printLeaderBoard() const
         printPlayerLeaderBoard(counter, m_winners[i].operator*());
         counter++;
     }
-    std::queue<std::shared_ptr<Player>> tempQueue = m_players;
-    for(int i = 0; i<m_numberOfActivePlayers; i++)
+    for(auto it = m_players.cbegin(); it!=m_players.cend(); it++)
     {
-        printPlayerLeaderBoard(counter, tempQueue.front().operator*());
-        tempQueue.push(tempQueue.front());
-        tempQueue.pop();
+        printPlayerLeaderBoard(counter,(*it).operator*());
         counter++;
     }
     for(int i = m_losers.size(); i>0;i--)
