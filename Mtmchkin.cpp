@@ -66,7 +66,7 @@ void Mtmchkin::newPlayer()
                 continue;
             }
             playerClass = inputString.substr(locationOfSpace + 1);
-            for (int i = 0; i < playerName.size(); i++)
+            for (int i = 0; i < static_cast<int>(playerName.length()); i++)
             {
                 //check name
                 completelyValidInput=true;
@@ -230,7 +230,7 @@ void Mtmchkin::printLeaderBoard() const
 {
     printLeaderBoardStartMessage();
     int counter = 1;
-    for(int i = 0; i<m_winners.size(); i++)
+    for(int i = 0; i<static_cast<int>(m_winners.size()); i++)
     {
         printPlayerLeaderBoard(counter, *(m_winners[i].get()));
         counter++;

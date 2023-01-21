@@ -38,6 +38,5 @@ add_executable(ex4
         Players/Warrior.h
         Mtmchkin.h
         Mtmchkin.cpp
-        test.cpp
         utilities.cpp
-        utilities.h)
+        utilities.h main.cpp)

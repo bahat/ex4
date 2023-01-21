@@ -14,12 +14,12 @@ static const std::string WARRIOR_NAME="Warrior";
 
 Player::Player(const std::string &name, const std::string &type):
         m_name(name),
-        m_type(type),
         m_maxHP(Player::DEFAULT_MAX_HP),
         m_force(Player::DEFAULT_FORCE),
         m_HP(Player::DEFAULT_MAX_HP),
         m_coins(Player::DEFAULT_COINS),
-        m_level(Player::DEFAULT_LEVEL)
+        m_level(Player::DEFAULT_LEVEL),
+        m_type(type)
 {
 }
 
